@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo">Seleção BR</h1>
+            <ul class="menu">
+                <li><a href="/">Início</a></li>
+                <li><a href="/elenco/">Elenco</a></li>
+                <li><a href="/sobre/">Sobre</a></li>
+            </ul>
+            <img src="{% static 'images/logo.png' %}" alt="Logo da Seleção" width="70">
+        </nav>
+    </header>
+
+    <main class="container">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Projeto Django da Seleção Brasileira</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'siteequipo/base.html' %}
+{% block title %}Elenco{% endblock %}
+{% block content %}
+    <h1>Elenco</h1>
+    <ul>
+        {% for jogador in jogadores %}
+        <li>
+            <img src="{{ jogador.foto }}" width="100">
+            <p><strong>Nome:</strong> {{ jogador.nome }}</p>
+            <p><strong>Idade:</strong> {{ jogador.idade }}</p>
+            <p><strong>Posição:</strong> {{ jogador.posicao }}</p>
+            <p><strong>Nascimento:</strong> {{ jogador.nascimento }}</p>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

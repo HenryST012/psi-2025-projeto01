@@ -50,48 +50,99 @@ body {
     max-width: 960px;
     margin: auto;
 }
+.pagina-index {
+    text-align: center;
+    padding: 20px;
+}
 
 /* PÁGINA INDEX */
-.container img {
-    width: 100%;
-    max-width: 900px;
-    margin-top: 1rem;
-    border-radius: 10px;
+.imagem-index {
+    display: block;
+    margin: 20px auto; /* Centraliza horizontalmente */
+    max-width: 80%;    /* Responsivo */
+    height: auto;      /* Mantém proporção */
+    border-radius: 10px; /* Opcional: bordas arredondadas */
 }
 
 /* ELENCO */
 ul {
-    list-style: none;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
 }
 
 ul li {
-    margin-bottom: 2rem;
-    background-color: #fff;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
 ul li img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 50%;
+  width: 150px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
+ul li strong {
+  display: block;
+  margin-top: 5px;
+  font-weight: bold;
+}
+
+ul li p {
+  margin: 3px 0;
+}
+
+.foto-alisson {
+    object-position: center top;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
+
+.foto-marquinhos {
+    object-position: center top;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+}
 /* FOOTER */
 footer {
     background-color: #006400;
     color: #fff;
     text-align: center;
     padding: 1rem;
-    margin-top: 3rem;
+    margin-top:auto;
+}
+body {
+    display:flex;
+    text-align: center;
+    flex-direction:column;
+    min-height: 100vh;
 }
 
+main {
+    flex: 1;
+}
 /* RESPONSIVO */
 @media (max-width: 600px) {
     .navbar {

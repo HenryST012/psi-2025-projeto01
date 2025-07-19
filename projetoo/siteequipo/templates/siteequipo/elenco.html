@@ -1,11 +1,12 @@
 {% extends 'siteequipo/base.html' %}
+{% load static %}
 {% block title %}Elenco{% endblock %}
 {% block content %}
     <h1>Elenco</h1>
     <ul>
         {% for jogador in jogadores %}
         <li>
-            <img src="{{ jogador.foto }}" width="100">
+            <img src="{% static jogador.foto %}" class="foto-{{ jogador.nome|lower|slugify }}" alt="{{ jogador.nome }}">
             <p><strong>Nome:</strong> {{ jogador.nome }}</p>
             <p><strong>Idade:</strong> {{ jogador.idade }}</p>
             <p><strong>Posição:</strong> {{ jogador.posicao }}</p>

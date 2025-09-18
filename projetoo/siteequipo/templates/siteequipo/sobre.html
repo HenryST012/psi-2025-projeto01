@@ -1,8 +1,12 @@
 {% extends 'siteequipo/base.html' %}
 {% block title %}Sobre{% endblock %}
+
 {% block content %}
-    <h1>Sobre o Site</h1>
-    <p>{{ info.descricao }}</p>
-    <p><strong>Autor:</strong> {{ info.autores|join:", " }}</p>
-    <p><strong>Instituição:</strong> {{ info.instituicao }}</p>
+    <div class="bg-white p-5 rounded-4 shadow-sm">
+        <h1 class="display-5 mb-4 fw-bold text-primary">Sobre o Projeto</h1>
+        <p class="lead">{{ info.descricao }}</p>
+        <hr class="my-4">
+        <p><strong>Autor:</strong> {{ info.autores|join:", " }}</p>
+        <p><strong>Instituição:</strong> {{ info.instituicao }}</p>
+    </div>
 {% endblock %}

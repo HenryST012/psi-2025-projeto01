@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from .models import Post
 
 def index(request):
     contexto = {
@@ -31,3 +32,17 @@ def sobre(request):
         'instituicao': 'IFRN'
     }
     return render(request, 'siteequipo/sobre.html', {'info': info})
+
+def blog_index(request):
+    posts = Post.objects.all().order_by('-data_publicacao')
+    contexto = {
+        'posts': posts
+    }
+    return render(request, 'siteequipo/blog_index.html', contexto)
+
+def blog_post(request, post_id):
+    post = get_object_or_404(Post, pk=post_id)
+    contexto = {
+        'post': post
+    }
+    return render(request, 'siteequipo/blog_post.html', contexto)

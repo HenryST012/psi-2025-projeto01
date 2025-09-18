@@ -1,18 +1,28 @@
 {% extends 'siteequipo/base.html' %}
 {% load static %}
 {% block title %}Elenco{% endblock %}
+
 {% block content %}
-    <h1>Elenco</h1>
-    <ul>
+    <h1 class="mb-4 text-center text-success fw-bold">Nosso Elenco</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
         {% for jogador in jogadores %}
-        <li>
-            <img src="{% static jogador.foto %}" class="foto-{{ jogador.nome|lower|slugify }}" alt="{{ jogador.nome }}">
-            <p><strong>Nome:</strong> {{ jogador.nome }}</p>
-            <p><strong>Idade:</strong> {{ jogador.idade }}</p>
-            <p><strong>Posição:</strong> {{ jogador.posicao }}</p>
-            <p><strong>Nascimento:</strong> {{ jogador.nascimento }}</p>
-            <hr>
-        </li>
+        <div class="col">
+            <div class="card h-100 shadow border-0">
+                <div class="d-flex align-items-center justify-content-center bg-light" style="height: 300px; overflow: hidden;">
+                    <img src="{% static jogador.foto %}" alt="{{ jogador.nome }}" 
+                         class="img-fluid" style="object-fit: cover; height: 100%; width: 100%;">
+                </div>
+                
+                <div class="card-body">
+                    <h5 class="card-title fw-bold text-success">{{ jogador.nome }}</h5>
+                    <p class="card-text mb-1"><strong>Posição:</strong> {{ jogador.posicao }}</p>
+                    <p class="card-text text-muted"><strong>Idade:</strong> {{ jogador.idade }} anos</p>
+                </div>
+                <div class="card-footer bg-success text-white">
+                    <small>Nascido em: {{ jogador.nascimento }}</small>
+                </div>
+            </div>
+        </div>
         {% endfor %}
-    </ul>
+    </div>
 {% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'siteequipo/base.html' %}
+{% load static %}
+
+{% block title %}{{ post.titulo }}{% endblock %}
+
+{% block content %}
+<div class="bg-white p-4 p-md-5 rounded-4 shadow-sm">
+    <h1 class="display-5 text-center fw-bold text-success">{{ post.titulo }}</h1>
+    <p class="text-muted border-bottom pb-3 mb-4 text-center">
+        <em><i class="bi bi-calendar-event"></i> Publicado em: {{ post.data_publicacao|date:"d/m/Y H:i" }}</em>
+    </p>
+    
+    {% if post.imagem %}
+        <div class="text-center mb-4">
+            <img src="{{ post.imagem.url }}" alt="{{ post.titulo }}" 
+                 class="img-fluid rounded shadow-lg" style="max-width: 700px;">
+        </div>
+    {% endif %}
+    
+    <div class="post-content fs-5" style="text-align: justify;">
+        {{ post.texto|linebreaks }}
+    </div>
+
+    <hr class="my-4">
+
+    <a href="{% url 'blog_index' %}" class="btn btn-success btn-lg shadow">&larr; Voltar para o blog</a>
+</div>
+{% endblock %}

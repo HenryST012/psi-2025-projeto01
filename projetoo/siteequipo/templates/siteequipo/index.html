@@ -3,9 +3,14 @@
 {% block title %}Início{% endblock %}
 
 {% block content %}
-    <div class="pagina-index">
-        <h1>{{ titulo }}</h1>
-        <img src="{% static imagem_url %}" alt="Imagem da Seleção" width="500" style="border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.2); margin: 20px 0;">
-        <p>{{ descricao }}</p>
+    <div class="p-5 text-center bg-white rounded-4 shadow-lg">
+        <img src="{% static imagem_url %}" alt="Imagem da Seleção" 
+             class="img-fluid rounded mb-4 shadow" style="max-height: 400px;">
+        <h1 class="fw-bold text-success display-4">{{ titulo }}</h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted mb-4">
+            {{ descricao }}
+        </p>
+        <a href="{% url 'elenco' %}" class="btn btn-success btn-lg px-4 me-2 shadow-sm">Ver Elenco</a>
+        <a href="{% url 'blog_index' %}" class="btn btn-outline-primary btn-lg px-4">Últimas Notícias</a>
     </div>
 {% endblock %}
